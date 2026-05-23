@@ -1,0 +1,153 @@
+export default function ReLeeWebsite() { const books = [ { title: 'Cálculo Diferencial', price: '$80 MXN', condition: 'Buen estado' }, { title: 'Física Universitaria', price: '$100 MXN', condition: 'Excelente estado' }, { title: 'Álgebra Lineal', price: '$70 MXN', condition: 'Seminuevo' } ];
+
+return ( <div className="min-h-screen bg-white text-gray-800 font-sans"> {/* Header */} <header className="bg-green-600 text-white p-6 shadow-lg"> <div className="max-w-6xl mx-auto flex justify-between items-center"> <div> <h1 className="text-4xl font-bold">Re-Lee</h1> <p className="text-sm mt-1">Banco de libros universitarios</p> </div>
+
+<nav className="flex gap-6 text-lg">
+        <a href="#inicio" className="hover:underline">Inicio</a>
+        <a href="#catalogo" className="hover:underline">Catálogo</a>
+        <a href="#donaciones" className="hover:underline">Donaciones</a>
+        <a href="#contacto" className="hover:underline">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  {/* Hero */}
+  <section
+    id="inicio"
+    className="bg-gradient-to-r from-green-500 to-blue-500 text-white py-24 px-6"
+  >
+    <div className="max-w-5xl mx-auto text-center">
+      <h2 className="text-5xl font-bold mb-6">
+        Consigue tus libros a menor precio
+      </h2>
+
+      <p className="text-xl mb-8">
+        Reutiliza, ahorra y apoya a otros estudiantes de FIME.
+      </p>
+
+      <button className="bg-white text-green-700 px-8 py-4 rounded-2xl text-lg font-semibold shadow-lg hover:scale-105 transition-transform">
+        Ver catálogo
+      </button>
+    </div>
+  </section>
+
+  {/* About */}
+  <section className="py-20 px-6 max-w-6xl mx-auto">
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h3 className="text-3xl font-bold mb-6 text-green-700">
+          ¿Qué es Re-Lee?
+        </h3>
+
+        <p className="text-lg leading-relaxed mb-4">
+          Re-Lee es un proyecto universitario enfocado en la venta,
+          intercambio y donación de libros académicos usados para apoyar
+          económicamente a estudiantes.
+        </p>
+
+        <p className="text-lg leading-relaxed">
+          Nuestro objetivo es fomentar la reutilización de materiales
+          educativos y hacer más accesible el aprendizaje dentro de FIME.
+        </p>
+      </div>
+
+      <div className="bg-gray-100 rounded-3xl p-10 shadow-xl">
+        <h4 className="text-2xl font-bold mb-6 text-blue-700">
+          Beneficios
+        </h4>
+
+        <ul className="space-y-4 text-lg">
+          <li>📚 Libros accesibles</li>
+          <li>💰 Ahorro económico</li>
+          <li>♻️ Reutilización de materiales</li>
+          <li>🤝 Apoyo a estudiantes</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  {/* Catalog */}
+  <section id="catalogo" className="bg-gray-50 py-20 px-6">
+    <div className="max-w-6xl mx-auto">
+      <h3 className="text-4xl font-bold text-center mb-14 text-green-700">
+        Catálogo de Libros
+      </h3>
+
+      <div className="grid md:grid-cols-3 gap-8">
+        {books.map((book, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-3xl shadow-lg p-6 hover:shadow-2xl transition-shadow"
+          >
+            <div className="h-48 bg-gradient-to-br from-green-300 to-blue-300 rounded-2xl mb-6 flex items-center justify-center text-5xl">
+              📘
+            </div>
+
+            <h4 className="text-2xl font-bold mb-3">{book.title}</h4>
+
+            <p className="text-lg mb-2">Precio: {book.price}</p>
+            <p className="text-lg mb-6">Estado: {book.condition}</p>
+
+            <button className="w-full bg-green-600 text-white py-3 rounded-xl font-semibold hover:bg-green-700 transition-colors">
+              Contactar
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Donations */}
+  <section id="donaciones" className="py-20 px-6 max-w-5xl mx-auto">
+    <div className="bg-blue-50 rounded-3xl p-12 shadow-xl text-center">
+      <h3 className="text-4xl font-bold mb-6 text-blue-700">
+        Dona tus libros
+      </h3>
+
+      <p className="text-lg mb-8 leading-relaxed">
+        Ayuda a otros estudiantes donando libros que ya no utilices.
+        Contribuye a la economía circular y apoya el aprendizaje.
+      </p>
+
+      <div className="grid md:grid-cols-3 gap-6 text-lg">
+        <div className="bg-white rounded-2xl p-6 shadow-md">
+          📦<br />
+          Reúne tus libros
+        </div>
+
+        <div className="bg-white rounded-2xl p-6 shadow-md">
+          📲<br />
+          Contáctanos
+        </div>
+
+        <div className="bg-white rounded-2xl p-6 shadow-md">
+          🤝<br />
+          Entrégalos en FIME
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Contact */}
+  <section id="contacto" className="bg-green-700 text-white py-20 px-6">
+    <div className="max-w-4xl mx-auto text-center">
+      <h3 className="text-4xl font-bold mb-8">Contacto</h3>
+
+      <div className="space-y-4 text-xl">
+        <p>📱 WhatsApp: 81 0000 0000</p>
+        <p>📸 Instagram: @relee.fime</p>
+        <p>📘 Facebook: Re-Lee FIME</p>
+        <p>✉️ Correo: relee@fime.com</p>
+      </div>
+    </div>
+  </section>
+
+  {/* Footer */}
+  <footer className="bg-gray-900 text-white text-center py-6">
+    <p>
+      © 2026 Re-Lee | Proyecto universitario sustentable para estudiantes
+    </p>
+  </footer>
+</div>
+
+); }
